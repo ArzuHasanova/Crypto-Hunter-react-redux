@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
 
+import "./App.css";
+
+import Header from "./Header";
+import Home from "./Home";
+import CryptoCurrencies from "./CryptoCurrencies";
+import Trend from "./Trend";
+import { Routes, Route } from "react-router-dom";
 function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+    )
+      .then((res) => res.json())
+      .then((result) => setData(result));
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home data={data} />} />
+        <Route path="crypto" element={<CryptoCurrencies data={data} />} />
+        <Route path="trend" element={<Trend data={data} />} />
+        <Route path="products" element={<Products />} />
+      </Routes>
     </div>
   );
 }

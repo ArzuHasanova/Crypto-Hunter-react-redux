@@ -15,18 +15,86 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  padding: 20px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.trend {
+  width: 800px;
+  margin: 0 auto;
+}
+.header a {
+  color: white;
+}
+.logo a {
+  text-decoration: none;
+  color: yellow;
+  font-weight: bold;
+}
+
+.home {
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
   color: white;
 }
 
+.home img {
+  margin: 0 auto;
+}
+
+.home h1 {
+  margin-bottom: 40px;
+}
+.crypto input {
+  height: 40px;
+}
+.crypto-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.crypto-item {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid white;
+  justify-content: space-between;
+}
+.crypto-item img {
+  width: 40px;
+  height: 40px;
+}
 .App-link {
   color: #61dafb;
 }
+.products-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  .product {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid white;
+  justify-content: space-between;
+  }
+  .product img {
+  width: 40px;
+  height: 40px;
+  }
 
 @keyframes App-logo-spin {
   from {
